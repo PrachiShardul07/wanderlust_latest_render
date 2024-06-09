@@ -4,21 +4,26 @@
     <br /><br />
 <h2>Create New Listing</h2>
 <br />
-<form method="POST" action="/listings" novalidate class="needs-validation">
+<form method="POST" action="/listings" novalidate class="needs-validation" 
+    enctype="multipart/form-data">
     <div class="mb-3">
     <label for="title" class="form-label">Title</label>    
      <input 
      name="listing[title]" 
      placeholder=" Enter Title" 
-     type="text" class="form-control"
-     required >
-    </div>
-    
+     type="text" 
+     class="form-control"
+     required
+     />
+     <div class="valid-feedback">Looks good!!</div>
+</div>
      <div>
         <div class="mb-3">
     <label for="description" class="form-label">Description</label>
     <textarea name="listing[description]" 
-   class="form-control" required>
+   class="form-control" 
+   required
+   >
     </textarea>
      </div>
 
@@ -29,6 +34,17 @@
       placeholder=" Enter image URL?LINK"
       type="text" class="form-control">
 </div>
+
+
+<div class="mb-3">
+    <label for="image" class="form-label">Upload Listing Image</label>
+<input 
+  name="listing[image]" 
+  type="file" 
+  class="form-control">
+  required
+</div>
+
      
     <div class="row">
     <div class="mb-3 col-md-4">
@@ -36,7 +52,10 @@
     <input
        name="listing[price]" 
        placeholder=" Enter your Price"
-       type="number" class="form-control" required>
+       class="form-control"
+        required 
+        />
+        <div class="invalid-feedback">Please Enter valid Price </div>
     </div>
      
      <div class="mb-3 col-md-8">
@@ -44,7 +63,10 @@
         <input
         name="listing[country]"
         placeholder=" Enter your country"
-        type="text" class="form-control" required>
+        type="text" class="form-control" 
+        required
+        />
+        <div class="invalid-feedback">Please Enter valid Country </div>
      </div>
 </div>
      
@@ -53,7 +75,10 @@
         <input
         name="listing[location]"
         placeholder=" Enter your location"
-        type="text" class="form-control" required>
+        type="text" class="form-control" 
+        required
+        />
+        <div class="invalid-feedback">Please Enter valid Location </div>
     </div>
     
      <button class="btn btn-dark add-btn mt-3">Add</button>
